@@ -1,2 +1,2 @@
-# pp4-project
+# Inventory Management System
 PP4 Project created for Code Institute porfolio submission
