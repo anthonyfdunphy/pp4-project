@@ -1,10 +1,20 @@
 @font-face {
-    font-family: "GT-America";
-    src: url("/mysite/fonts/GT-America-Regular.ttf") format("truetype");
+    font-family: "MierA";
+    src: url("/mysite/fonts/MierA-Light.ttf") format("truetype");
   }
 
+@font-face {
+    font-family: "MierAReg";
+    src: url("/mysite/fonts/MierA-Regular.ttf") format("truetype");
+  }  
+
+@font-face {
+    font-family: "GT-America";
+    src: url("/mysite/fonts/GT-America-Regular.ttf") format("truetype");
+  } 
+
   body {
-    font-family: "GT-America", sans-serif;
+    font-family: "MierA";
     font-size: 17px;
     background-color: white;
   }
@@ -20,8 +30,43 @@
  
  .masthead {
           background: url("https://backend.florafaunavisions.de/wp-content/uploads/2020/06/MG_8115.jpg");
-          height: 17rem;
+          height: 30rem;
           padding-bottom: 15px;
-          box-shadow: 0 16px 48px #E3E7EB;
           padding-top: 10px;
+}
+
+.masthead h1{
+    font-size: 4.2rem;
+    font-family: 'GT-America', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+
+.card-body h2{
+  font-family: 'GT-America', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.card-body img{
+  max-width: 100%;
+  border-radius: 5%;
+  margin-bottom: 1rem;
+}
+
+.card{
+  border: none;
+}
+
+#card-text{
+  text-transform: uppercase;
+  font-family: 'GT-America', sans-serif;
+}
+
+.btn{
+  text-transform: uppercase;
+  font-family: 'GT-America', sans-serif;
+  font-size: 0.8rem;
 }
