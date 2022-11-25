@@ -31,15 +31,36 @@
     /* border-color: #dc281e; */
   }
  
- .masthead {
+ .masthead{
           background: url("https://backend.florafaunavisions.de/wp-content/uploads/2020/06/MG_8115.jpg");
           height: 30rem;
           padding-bottom: 15px;
           padding-top: 10px;
           color: #1f4d8f;
           filter: blur(1.5rem);
-          z-index: -1; /* Keep the background behind the content */
  }
+
+ .site-heading{
+  width: 75%;
+  height: 950px;
+  position: absolute;
+  top: 15%;
+  left: 12%;
+  bottom: 1;
+  color: white;
+  font-size: 5.2rem;
+
+ }
+
+.additional-text{
+    font-size: 4.2rem;
+    font-family: 'GT-America', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    filter: none;
+
+}
 
 .masthead h1{
     font-size: 4.2rem;
@@ -48,7 +69,6 @@
     font-weight: bold;
     color: white;
     filter: none;
-    /* z-index: 1;  */
 }
 
 .card-body h2{
