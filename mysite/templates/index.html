@@ -8,7 +8,7 @@
               <div class="row">
                 <div class=" col-md-8 col-md-10 mx-auto">
                   <div class="site-heading">
-                    <h1 class=" site-heading my-2 mt-5"> An online platform that showcases various Touchdesigner tutorials </h3>
+                    <!-- <h1 class=" site-heading my-2 mt-5"> An online platform that showcases various Touchdesigner tutorials </h3> -->
                 </div>
                     </div>
                   </div>
@@ -26,10 +26,10 @@
                   <div class="card-body">
                     <img src="{{ post.image.url }}" alt="image">
                     <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6" id="card-text">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="card-text text-muted h6 underline" id="card-text">{{ post.author }} | {{ post.created_on}} </p>
 
                     <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More</a>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn">Read More</a>
                   </div>
                  
                 </div>

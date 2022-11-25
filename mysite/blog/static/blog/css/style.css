@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/fakt-pro');
+@import url('https://fonts.cdnfonts.com/css/mona-sans');
+
 @font-face {
     font-family: "MierA";
     src: url("/mysite/fonts/MierA-Light.ttf") format("truetype");
@@ -13,19 +16,19 @@
     src: url("/mysite/fonts/GT-America-Regular.ttf") format("truetype");
   } 
 
-  /* body {
-    font-family: "MierA";
+  body {
+    font-family: 'Mona-Sans', sans-serif;
     font-size: 17px;
-    background-color: white;
-  } */
+    background-color: #fff;
+  }
 
 .shadow{
        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
    }
   .btn-danger {
     color: #fff;
-    background-color: #f00000;
-    border-color: #dc281e;
+    /* background-color: #f00000; */
+    /* border-color: #dc281e; */
   }
  
  .masthead {
@@ -33,7 +36,10 @@
           height: 30rem;
           padding-bottom: 15px;
           padding-top: 10px;
-}
+          color: #1f4d8f;
+          filter: blur(1.5rem);
+          z-index: -1; /* Keep the background behind the content */
+ }
 
 .masthead h1{
     font-size: 4.2rem;
@@ -41,10 +47,12 @@
     text-transform: uppercase;
     font-weight: bold;
     color: white;
+    filter: none;
+    /* z-index: 1;  */
 }
 
 .card-body h2{
-  font-family: 'GT-America', sans-serif;
+  font-family: 'Fakt Pro', sans-serif;                                     
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 0;
@@ -60,13 +68,44 @@
   border: none;
 }
 
+.card-text{
+  color: #1f4d8f;
+  text-align: justify;
+}
+
 #card-text{
   text-transform: uppercase;
-  font-family: 'GT-America', sans-serif;
+  font-weight: 400;
+  text-decoration: underline;
 }
 
 .btn{
-  /* text-transform: uppercase; */
-  font-family: 'GT-America', sans-serif;
+  /* font-family: 'GT-America', sans-serif; */
   font-size: 0.8rem;
+  color: #1f4d8f;
+  border: solid 1px #1f4d8f;
+  background-color: rgb(190, 190, 190);
+}
+
+.h1-transformation{
+  font-size: 4.5rem;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.card-header{
+  font-family: 'Mona-Sans', sans-serif;
+  color: #9a9a9a;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  text-align: center;
+  vertical-align: center;
+  padding: 5 0 0 0;
+}
+
+.center-btn{
+  justify-content: center;
+  align-items: center;
 }
