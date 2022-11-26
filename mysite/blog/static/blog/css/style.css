@@ -84,6 +84,21 @@
   margin-bottom: 1rem;
 }
 
+.side-body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.side-body p{
+  flex: 1 0 100%;
+  padding: 1rem;
+}
+
+.side-body a{
+  flex: 0 1 100%;
+}
+
 .card{
   border: none;
 }
@@ -115,14 +130,14 @@
   text-decoration: underline;
 }
 
-.card-header{
+.card-new-header{
   font-family: 'Mona-Sans', sans-serif;
   color: #9a9a9a;
   text-transform: uppercase;
   margin-bottom: 0px;
   text-align: center;
   vertical-align: center;
-  padding: 5 0 0 0;
+  padding-top: 15px;
 }
 
 .center-btn{
