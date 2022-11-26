@@ -10,10 +10,10 @@ The purpose of this website is to create a blog which has some blog posts about 
 
 There is CRUD functionality within this website. 
 
-+ Create: .....
-+ Read: ....
-+ Update: ...
-+ Delete: ....
++ Create: Users of the blog are able to add comments to the different blog posts on the website.
++ Read: The comments can be read and viewed once submitted to the website after they become live. The comments are active by default with out moderation.
++ Update: After a user has created a comment, they can update the comment to make edits to a previous comment on the website.
++ Delete: If the user feels like they wish to remove the comment, there is an option available to them to delete the comment from the page permenantly.
 
 
 ## User Stories
