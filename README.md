@@ -32,6 +32,13 @@ The design of this drew from projects such as...
 
 The primary features of this design are as follows
 
+The full colour palette is:
+
++ #fff - main background colour
++ #1f4d8f - text color for card and blog post text
++ #9a9a9a - card header
++ #1f4d8f - button color
+
 ## Libraries, frameworks and dependencies
 
 The following 
@@ -45,7 +52,8 @@ Pillow - Image processing
 The following
 
 ### Manual Testing
-The following testing was made for testing
+A number of manual tests were found to pass, once the bugs noted below had been fixed. Due to the frequent manual testing, I found that as a result of this I was able to make a number of enhancements to the user experience.
+
 ### Automated Testing
 The following ways were used for automated tests.
 ### Validator testing
