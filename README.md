@@ -63,3 +63,13 @@ The validator tests are as follows
 ## Deployment
 
 The following deployment methods are as follows.
+
+## Credits
+
+I found the following links helpful for learning about django:
++ https://www.youtube.com/watch?v=6I_haJimhPY&ab_channel=CodingEntrepreneurs
++ Here
++ Here
++ Here
++ Here
++ Here
