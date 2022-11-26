@@ -9,5 +9,6 @@ class TryDjangoConfigTest(TestCase):
         try:
             is_strong = validate_password(SECRET_KEY)
         except Exception as e:
-            self.fail(e)   
+            msg = f'Weak Secret Key {e.messages}'
+            self.fail(msg)   
 
