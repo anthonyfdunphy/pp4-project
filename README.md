@@ -3,10 +3,10 @@ PP4 Project created for Code Institute porfolio submission
 
 Link to deployed website
 
-##Purpose
+## Purpose
 The purpose of this website is to create a blog which has some blog posts about Touchdesigner - the multimedia python based visual programming software. There are blog post about some Python usage within TouchDesigner, basic usage of TouchDesigner and other helpful tips.
 
-##CRUD functionality
+## CRUD functionality
 
 There is CRUD functionality within this website. 
 
