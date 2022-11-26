@@ -55,7 +55,8 @@ The following
 A number of manual tests were found to pass, once the bugs noted below had been fixed. Due to the frequent manual testing, I found that as a result of this I was able to make a number of enhancements to the user experience.
 
 ### Automated Testing
-The following ways were used for automated tests.
+The following ways were used for automated tests - testing the secret key, to see if this was correct. The following tests were carried out:
+![alt text](https://i.imgur.com/oAs3WHR.png)
 ### Validator testing
 The validator tests are as follows
 
