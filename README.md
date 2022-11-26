@@ -1,4 +1,4 @@
-# Inventory Management System
+# TouchDesigner Blog
 PP4 Project created for Code Institute porfolio submission
 
 Link to deployed website
