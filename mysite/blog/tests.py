@@ -1,5 +1,6 @@
 import os
 from django.conf import settings
+from decouple import config
 from django.contrib.auth.password_validation import validate_password
 from django.test import TestCase
 
