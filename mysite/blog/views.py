@@ -2,15 +2,28 @@ from django.views import generic
 from .models import Post
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
 
+# class signup(generic.ListView):
+#     queryset = Post.objects.filter(status=1).order_by('-created_on')
+#     template_name = 'signup.html'
 
-# class PostDetail(generic.DetailView):
-#     model = Post
-#     template_name = 'post_detail.html'
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('core:home')
+    else:
+        form = UserCreationForm()        
+    return render(request, 'signup.html', {'form':form})
 
 
 def post_detail(request, slug):
