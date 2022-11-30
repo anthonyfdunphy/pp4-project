@@ -21,7 +21,9 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            login(request, user)
             messages.success(request, 'Account created successfully')
+            return redirect('/home/')
     else:
         form = UserCreationForm()        
     return render(request, 'signup.html', {'form':form})
