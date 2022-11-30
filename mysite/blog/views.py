@@ -1,9 +1,11 @@
 from django.views import generic
 from .models import Post
 from .forms import CommentForm
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.contrib import messages
+
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -19,11 +21,25 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
-            return redirect('core:home')
+            messages.success(request, 'Account created successfully')
+            return redirect('signup')
     else:
         form = UserCreationForm()        
     return render(request, 'signup.html', {'form':form})
+
+
+def register(request):
+    if request.method == 'POST':
+        f = UserCreationForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.success(request, 'Account created successfully')
+            return redirect('register')
+
+    else:
+        f = UserCreationForm()
+
+    return render(request, 'cadmin/register.html', {'form': f})
 
 
 def post_detail(request, slug):
