@@ -24,6 +24,7 @@ def signup(request):
             login(request, user)
             messages.success(request, 'Account created successfully')
             return redirect('/home/')
+            
     else:
         form = UserCreationForm()        
     return render(request, 'signup.html', {'form':form})
