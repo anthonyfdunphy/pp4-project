@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib import messages
+from django.template import loader
 
 
 class PostList(generic.ListView):
@@ -14,6 +15,11 @@ class PostList(generic.ListView):
 # class signup(generic.ListView):
 #     queryset = Post.objects.filter(status=1).order_by('-created_on')
 #     template_name = 'signup.html'
+
+
+def about(request):
+    template = loader.get_template('about.html')
+    return HttpResponse(template.render())
 
 
 def signup(request):
