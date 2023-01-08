@@ -18,8 +18,18 @@ class PostList(generic.ListView):
 
 
 def about(request):
-    template = loader.get_template('about.html')
-    return HttpResponse(template.render())
+    template_name = 'about.html'
+    return render(request, template_name)
+
+
+def tutorials(request):
+    template_name = 'tutorials.html'
+    return render(request, template_name)
+
+
+def contact(request):
+    template_name = 'contact.html'
+    return render(request, template_name)
 
 
 def signup(request):
