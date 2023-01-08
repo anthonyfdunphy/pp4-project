@@ -1,39 +1,86 @@
-{% extends "base.html" %}
-      
- {% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ABOUT PAGE</title>
 
-    <header class="masthead" >
-            <div class="overlay"></div>
-            <div class="container">
-              <div class="row">
-                <div class=" col-md-8 col-md-10 mx-auto">
-                  <div class="site-heading">
-                    <!-- <h1 class=" site-heading my-2 mt-5"> An online platform that showcases various Touchdesigner tutorials </h3> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-    </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}" />
+    
+  </head>
 
-    <div class="landing-text">
-      <h1 class=" site-heading my-2 mt-5"> This is the About Section </h3>
-    </div>
-        
-            <div class="container">
-                <div class="row">
-      
-              <!-- Blog Entries Column -->
-              <div class="col-md-8 mt-3 left">
-                    {% for post in post_list %}
-                <div class="card mb-4" >
-                  </div>
-                 
-                </div>
-                {% endfor %}
-            </div>
-                {% block sidebar %}
-                {% include 'sidebar.html' %}
-                {% endblock sidebar %}
-            </div>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;" id="mainNav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}" ><img src="https://medias.mutek.org/mutek/TouchDesigner_black-01.png" alt="logo" style="max-width:180px"> </a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item text-black">
+              <a
+                class="nav-link text-black"
+                href="#"
+                >Tutorials</a
+              >
+            </li>
+            <li class="nav-item text-black">
+              <a
+                class="nav-link text-black"
+                href="#"
+                >About</a
+              >
+            </li>
+            <li class="nav-item text-black">
+              <a
+                class="nav-link text-black"
+                href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </div>
-{%endblock%}
+      </div>
+    </div>
+    </nav>
+
+    <!-- Adding the message in the template -->
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endfor %}
+    <!-- ... -->
+
+    
+    <!-- Footer -->
+    <footer class="py-3 bg-grey">
+              <p class="m-0 text-dark text-center ">Copyright &copy; ABOUT PAGE</p>
+    </footer>
+    
+  </body>
+</html>
