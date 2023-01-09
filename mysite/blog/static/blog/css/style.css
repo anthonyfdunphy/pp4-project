@@ -49,8 +49,52 @@
   bottom: 1;
   color: white;
   font-size: 5.2rem;
-
  }
+
+ .about-heading{
+  width: 75%;
+  height: 950px;
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  bottom: 1;
+  color: white;
+  font-size: 9.2rem;
+ }
+
+ .tutorial-heading{
+  width: 75%;
+  height: 950px;
+  position: absolute;
+  top: 25%;
+  left: 27%;
+  bottom: 1;
+  color: white;
+  font-size: 9.2rem;
+ }
+
+ .contact-heading{
+  width: 75%;
+  height: 950px;
+  position: absolute;
+  top: 25%;
+  left: 26%;
+  bottom: 1;
+  color: white;
+  font-size: 9.2rem;
+ }
+
+#about{
+  background: url("https://derivative.ca/sites/default/files/field/body-images/Screenshot%202019-09-05%2020.03.18.png");
+}
+
+#tutorials{
+  background: url("https://www.wendyzhou.se/blog/wp-content/uploads/2021/09/Lumus-TouchDesigner-Audiovisual.jpeg");
+}
+
+#contact{
+  background: url("https://www.clotmag.com/wp-content/uploads/2022/09/Everything_by-Nohlab_02.jpg");
+}
 
 .additional-text{
     font-size: 4.2rem;
@@ -70,6 +114,7 @@
     color: white;
     filter: none;
 }
+
 
 .card-body h2{
   font-family: 'Fakt Pro', sans-serif;                                     
