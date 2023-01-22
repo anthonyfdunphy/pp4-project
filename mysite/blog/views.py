@@ -2,8 +2,7 @@ from django.views import generic
 from .models import Post, Comment
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.forms import AuthenticationForm #add this
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm 
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.template import loader
@@ -59,7 +58,7 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-                return redirect("/home/")
+                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 messages.error(request,"Invalid username or password.")
         else:
@@ -77,9 +76,9 @@ def logout_request(request):
 def delete_comment(request):
     if request.method == 'POST':
         # comment_name = request.POST.get('Kate')
-        comment = Comment.objects.get(name="Kate")
+        comment = Comment.objects.get(name="AD")
         comment.delete()
-        return redirect('home')
+        return redirect(request.META.get('HTTP_REFERER'))
     else:
         return HttpResponse("Method not allowed", status=405)
 
