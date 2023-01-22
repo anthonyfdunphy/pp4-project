@@ -7,6 +7,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.template import loader
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -73,7 +74,35 @@ def logout_request(request):
     return redirect("/home/")
 
 
+# @login_required
+# def delete_comment(request, comment_id):
+#     if request.method == 'POST':
+#         comment = Comment.objects.get(id=comment_id)
+#         if comment.name == request.user.username:
+#             comment.delete()
+#             return redirect(request.META.get('HTTP_REFERER'))
+#         else:
+#             return HttpResponse("You are not authorized to delete this comment", status=401)
+#     else:
+#         return HttpResponse("Method not allowed", status=405)
+
+
+# @login_required
+# def delete_comment(request):
+#     if request.method == 'POST':
+#         comment_id = request.POST.get('comment_id')
+#         comment = Comment.objects.get(id=comment_id)
+#         if comment.name == request.user.username:
+#             comment.delete()
+#             return redirect(request.META.get('HTTP_REFERER'))
+#         else:
+#             return HttpResponse("You are not authorized to delete this comment", status=401)
+
+
+
 def delete_comment(request):
+    comments = Comment.objects.filter(name=request.user.username)
+    print(comments)
     if request.method == 'POST':
         # comment_name = request.POST.get('Kate')
         comment = Comment.objects.get(name="AD")
