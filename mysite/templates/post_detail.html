@@ -42,6 +42,17 @@
           Your comment is awaiting moderation
         </div>
         {% else %}
+
+        <!-- <a <a href="{% url 'home' %}" class="btn btn-primary">DELETE</a> -->
+
+        <!-- This deletes the comment form the Django admin section -->
+        <form method="POST" action="{% url 'delete_comment' %}">
+          {% csrf_token %}
+          <input type="hidden" name="comment_id" value="{{ comment.id }}">
+          <input type="hidden" name="user_id" value="{{ user.id }}">
+          <input type="submit" value="Delete Comment">
+      </form>      
+
         <h3>Leave a comment</h3>
         <form method="post" style="margin-top: 1.3em;">
           {{ comment_form | crispy }}

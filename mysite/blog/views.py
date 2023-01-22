@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -7,6 +7,8 @@ from django.contrib.auth.forms import AuthenticationForm #add this
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.template import loader
+from django.contrib.auth.models import User
+
 
 
 class PostList(generic.ListView):
@@ -70,6 +72,16 @@ def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect("/home/")
+
+
+def delete_comment(request):
+    if request.method == 'POST':
+        # comment_name = request.POST.get('Kate')
+        comment = Comment.objects.get(name="Kate")
+        comment.delete()
+        return redirect('home')
+    else:
+        return HttpResponse("Method not allowed", status=405)
 
 
 def register(request):

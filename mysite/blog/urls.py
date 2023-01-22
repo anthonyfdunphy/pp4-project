@@ -1,5 +1,5 @@
 from . import views
-from django.urls import path
+from django.urls import path, re_path
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
@@ -10,6 +10,7 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('login', views.login_request, name='login'),
     path('logout', views.logout_request, name = 'logout'),
+    path('delete_comment', views.delete_comment, name='delete_comment'),
     path('<slug:slug>/', views.post_detail, name='post_detail')
 ]
 
