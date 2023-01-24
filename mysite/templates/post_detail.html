@@ -30,6 +30,22 @@
             </span>
           </p>
           {{ comment.body | linebreaks }}
+
+          <!-- This code section adds a delete button to the a user comment if they are logged in -->
+          <div>
+            {% if user.is_authenticated %}
+                {% if comment.name == user.username %}
+                    <form method="POST" action="{% url 'delete_comment' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                        <input type="submit" value="Delete Comment">
+                    </form>
+                {% else %}
+                    <p>You are not the creator of this comment</p>
+                {% endif %}
+            {% endif %}
+        </div>
+        
         </div>
 
         {% endfor %}
@@ -42,32 +58,6 @@
           Your comment is awaiting moderation
         </div>
         {% else %}
-
-        <!-- <a <a href="{% url 'home' %}" class="btn btn-primary">DELETE</a> -->
-
-        <!-- This deletes the comment form the Django admin section -->
-        <!-- {% if user.is_authenticated %}
-        <form method="POST" action="{% url 'delete_comment' %}">
-          {% csrf_token %}
-          <input type="hidden" name="comment_id" value="{{ comment.id }}">
-          <input type="submit" value="Delete Comment">
-      </form>
-        {% endif %}  -->
-        {% for comment in comments %}
-          <div>
-          {{ comment.body }}
-          {% if comment.name == user.username %}
-              <form method="POST" action="{% url 'delete_comment' %}">
-                  {% csrf_token %}
-                  <input type="hidden" name="comment_id" value="{{ comment.id }}">
-                  <input type="submit" value="Delete Comment">
-              </form>
-              {% else %}
-              <p>You are not the creator of this comment</p>
-          {% endif %}
-          </div>
-        {% endfor %}
-
 
         <h3>Leave a comment</h3>
         <form method="post" style="margin-top: 1.3em;">
