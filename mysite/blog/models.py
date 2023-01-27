@@ -1,12 +1,27 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 STATUS =(
     (0,"Draft"),
     (1,"Publish")
 )
+
+class CustomUser(AbstractUser):
+
+    email = models.EmailField(unique=True)
+    first_name = models.CharField(max_length=30)
+    second_name = models.CharField(max_length=30)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['first_name', 'last_name']
+
+    def __str__(self):
+        return self.email
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)

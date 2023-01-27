@@ -9,8 +9,6 @@ class CommentForm(forms.ModelForm):
         fields = ('name', 'email', 'body')
 
 
-#Create your forms here
-
 class NewUserForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
@@ -24,3 +22,4 @@ class NewUserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+

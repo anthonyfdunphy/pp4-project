@@ -131,3 +131,6 @@ def register(request):
     return render(request, 'cadmin/register.html', {'form': f})
 
 
+def profile(request):
+    return redirect("profile/") 
+
