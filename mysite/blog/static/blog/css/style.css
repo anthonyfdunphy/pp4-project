@@ -16,11 +16,11 @@
     src: url("/mysite/fonts/GT-America-Regular.ttf") format("truetype");
   } 
 
-  body {
+body {
     font-family: 'Mona-Sans', sans-serif;
     font-size: 17px;
     background-color: #fff;
-  }
+}
 
 .shadow{
        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
@@ -39,6 +39,11 @@
           color: #1f4d8f;
           filter: blur(1.5rem);
  }
+
+ 
+/* .circular-image {
+  width: 10px !important;;
+} */
 
  .site-heading{
   width: 75%;

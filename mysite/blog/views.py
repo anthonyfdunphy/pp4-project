@@ -1,5 +1,5 @@
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, UserUpdateForm
 from django.views import generic, View
 from django.views.generic import TemplateView
 from django.urls import reverse
@@ -8,6 +8,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.template import loader
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -131,6 +132,23 @@ def register(request):
     return render(request, 'cadmin/register.html', {'form': f})
 
 
-def profile(request):
-    return redirect("profile/") 
+def profile(request, username):
+    if request.method == 'POST':
+        user = request.user
+        form = UserUpdateForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            user_form = form.save()
+
+            messages.success(request, f'{user_form}, Your profile has been updated!')
+            return redirect('profile', user_form.username)
+        
+        for error in list(form.errors.values()):
+            messages.error(request, error)
+
+    user = get_user_model().objects.filter(username=username).first()
+    if user:
+        form = UserUpdateForm(instance=user)
+        form.fields['description'].widget.attrs = {'rows': 1}
+        return render(request, 'profile-update.html', context={'form': form})
+    return redirect("home/") 
 
