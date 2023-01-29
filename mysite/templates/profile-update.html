@@ -7,11 +7,12 @@
         {% csrf_token %}
         <div class="media">
             <div class="media-body">
-                <h2 class="account-heading">{{ form.instance.username }}
-                    <small class="text-muted">({{ form.instance.status }})</small>
-                </h2>
-                <p class="text-secondary">{{ form.instance.first_name }} {{ form.instance.last_name }}</p>
-                <p class="text-secondary">{{ form.instance.email }}</p>
+                <img src="{{ user.profile_image.url }}" style="max-width:330px;max-height:195px;width: auto;height: auto;display: block;" alt="user image"></a>
+                <h2 class="account-heading">{{ form.instance.username }}</h2>
+                <h3><small class="text-muted">User Privileges: ({{ form.instance.status }})</small></h3>
+                <p class="text-secondary">First Name - {{ form.instance.first_name }}</p>
+                <p class="text-secondary">Second Name - {{ form.instance.last_name }}</p>
+                <!-- <p class="text-secondary">{{ form.instance.email }}</p> -->
                 <p class="text-secondary">{{ form.instance.description }}</p>
             </div>
         </div>
@@ -29,13 +30,17 @@
                 </div> 
                 {{ form.email|as_crispy_field }}
                 {{ form.description|as_crispy_field }}
+                {{ form.profile_image|as_crispy_field}}
 
                 <a href="/">Change password?</a>
             </fieldset>
+            
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Update</button>
             </div>
+
         {% endif %}
     </form>
+
 </div>
 {% endblock content %}

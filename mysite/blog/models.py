@@ -25,7 +25,6 @@ class CustomUser(AbstractUser):
     status = models.CharField(max_length=100, choices=STATUS, default='regular')
     description = models.TextField("Description", max_length=600, default='', blank=True)
     profile_image = models.ImageField(upload_to='images/', null=True, blank=True)
-    #profile_picture = models.ImageField(upload_to='images/', null=True, blank=True)
 
     def __str__(self):
         return self.username

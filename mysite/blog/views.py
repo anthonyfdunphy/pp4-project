@@ -150,5 +150,5 @@ def profile(request, username):
         form = UserUpdateForm(instance=user)
         form.fields['description'].widget.attrs = {'rows': 1}
         return render(request, 'profile-update.html', context={'form': form})
-    return redirect("home/") 
+    return redirect("home/")
 
