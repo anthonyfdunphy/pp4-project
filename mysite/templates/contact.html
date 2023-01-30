@@ -23,21 +23,16 @@
                 <div class="row">
       
               <!-- Blog Entries Column -->
-              <div class="col-md-8 mt-3 left">
-                    {% for post in post_list %}
-                <div class="card mb-4" >
-                  <div class="card-body">
-                    <img src="{{ post.image.url }}" alt="image">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6 underline" id="card-text">{{ post.author }} | {{ post.created_on}} </p>
+              <div class="text-justify col-md-8 mt-3 left">
+                The Contact Us section of the TouchDesigner site provides a platform for users to connect with the site's support team. Whether you have a question about a particular feature, need assistance with a tutorial, or simply want to provide feedback, we are here to help.
 
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn">Read More</a>
-                  </div>
-                 
-                </div>
-                {% endfor %}
-            </div>
+                To get in touch with us, simply fill out the form on our Contact Us page. Provide us with your name, email address, and a brief message outlining your request. Our support team will respond to your inquiry as soon as possible.
+
+                In addition to the Contact Us form, we also offer several other ways to get in touch. Feel free to reach out to us via email at support@touchdesigner.com, or give us a call at +1 (555) 555-5555. Our support team is available Monday through Friday, from 9 AM to 5 PM PST.
+
+                We take pride in providing exceptional support to our users, and we look forward to helping you achieve your goals with TouchDesigner. Whether you are a seasoned user or just starting out, we are here to help you make the most of this powerful node-based framework.
+
+              </div>
                 {% block sidebar %}
                 {% include 'sidebar.html' %}
                 {% endblock sidebar %}
