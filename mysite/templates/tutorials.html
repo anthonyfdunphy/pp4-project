@@ -16,31 +16,30 @@
     </header>
 
     <div class="landing-text">
-      <h1 class=" tutorial-heading my-1 mt-5"> Tutorials </h1>
+      <h1 class="tutorial-heading my-2 mt-5"> Tutorials </h3>
     </div>
         
             <div class="container">
                 <div class="row">
       
               <!-- Blog Entries Column -->
-              <div class="col-md-8 mt-3 left">
+                <div class="col-md-8 mt-3 left">
                     {% for post in post_list %}
-                <div class="card mb-4" >
-                  <div class="card-body">
-                    <img src="{{ post.image.url }}" alt="image">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6 underline" id="card-text">{{ post.author }} | {{ post.created_on}} </p>
+                      <div class="card mb-4" >
+                        <div class="card-body">
+                          <img src="{{ post.image.url }}" alt="image">
+                          <h2 class="card-title">{{ post.title }}</h2>
+                          <p class="card-text text-muted h6 underline" id="card-text">{{ post.author }} | {{ post.created_on}} </p>
 
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn">Read More</a>
-                  </div>
-                 
+                          <p class="card-text">{{post.content|slice:":200" }}</p>
+                          <a href="{% url 'post_detail' post.slug  %}" class="btn">Read More</a>
+                        </div>
+                      </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-            </div>
                 {% block sidebar %}
                 {% include 'sidebar.html' %}
                 {% endblock sidebar %}
-            </div>
-        </div>
+                </div>
+          </div>
 {%endblock%}

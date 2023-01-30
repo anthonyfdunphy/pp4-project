@@ -22,7 +22,8 @@ class AboutView(TemplateView):
     template_name = 'about.html'
 
 
-class TutorialView(TemplateView):
+class TutorialView(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'tutorials.html'
 
 
