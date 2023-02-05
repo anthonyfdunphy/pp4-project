@@ -194,3 +194,60 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* For devices larger than tablets */
+@media (min-width: 768px) {
+  /* Add styles here */
+  
+  /* .tutorial-heading{
+    left: 20%
+  } */
+
+}
+
+/* For tablets */
+@media (max-width: 768px) {
+  /* Add styles here */
+  .site-heading{
+    font-size: 3.7rem;
+  }
+
+  .tutorial-heading{
+    left: 9%
+  }
+
+  .about-heading{
+    left: 18%
+  }
+
+  .contact-heading{
+    left: 8%
+  }
+
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  /* Add styles here */
+  .site-heading{
+    font-size: 3rem;
+  }
+
+  .tutorial-heading{
+    font-size: 7rem;
+    left: 7%;
+  }
+
+  .about-heading{
+    font-size: 8rem;
+    left: 14%;
+  }
+
+  .contact-heading{
+    font-size: 7rem;
+  }
+
+  .res-border{
+    border: 1px solid #000;
+  }
+}
