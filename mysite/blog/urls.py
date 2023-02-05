@@ -13,6 +13,7 @@ urlpatterns = [
     path('login/', views.LoginRequest.as_view(), name='login'),
     path('logout', views.logout_request, name = 'logout'),
     path('delete_comment', views.delete_comment, name='delete_comment'),
+    path('delete_profile', views.delete_profile, name='delete_profile'),
     path('profile/<username>', views.profile, name='profile'),
     path('<slug:slug>/', views.PostDetailView.as_view(), name='post_detail')
 ]

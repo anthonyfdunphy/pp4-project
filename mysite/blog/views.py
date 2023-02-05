@@ -119,6 +119,15 @@ def delete_comment(request):
         return HttpResponse("You need to be logged in to delete a comment", status=405)
 
 
+@login_required
+def delete_profile(request):
+    if request.method == 'POST':
+        request.user.delete()
+        logout(request)
+        return redirect('home')
+    return render(request, 'delete_profile.html')
+
+
 def register(request):
     if request.method == 'POST':
         f = UserCreationForm(request.POST)
